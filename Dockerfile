@@ -14,6 +14,8 @@ COPY . .
 
 RUN composer install --no-dev --optimize-autoloader
 RUN npm install && npm run build
+RUN php artisan storage:link
+
 
 RUN touch database/database.sqlite
 RUN php artisan migrate --force
