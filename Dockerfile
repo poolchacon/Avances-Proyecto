@@ -18,7 +18,7 @@ RUN php artisan storage:link
 
 
 RUN touch database/database.sqlite
-RUN php artisan migrate --force
+RUN php artisan migrate --force --seed
 
 EXPOSE 10000
 CMD ["php", "artisan", "serve", "--host=0.0.0.0", "--port=10000"]
